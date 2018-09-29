@@ -6,7 +6,7 @@ Usage in local :
  - mvn package
  - java -jar target/example-java-read-and-write-from-hdfs-1.0-SNAPSHOT-jar-with-dependencies.jar hdfs://namenodeserver:8020
 
-Usage in Saagie :
+Usage :
 
  - mvn package (in local, to generate jar file)
  - create new Java Job
