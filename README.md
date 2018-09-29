@@ -4,7 +4,7 @@ Example for read & write into HDFS
 Usage in local :
 
  - mvn package
- - java -jar target/example-java-read-and-write-from-hdfs-1.0-SNAPSHOT-jar-with-dependencies.jar hdfs://namenodeserver:8020
+ - java -jar target/formation-hdfs-1.0-SNAPSHOT-jar-with-dependencies.jar hdfs://namenodeserver:8020
 
 Usage :
 
