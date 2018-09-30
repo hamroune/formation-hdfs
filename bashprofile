@@ -1,0 +1,49 @@
+
+Dans le GITHUB « aimad.goussa@gmail.com »  
+
+hamroune/formation-hdfs
+
+Clone with SSH 
+git@github.com:hamroune/formation-hdfs.git
+
+Après on récupère la clé public C:\Users\AGS\.ssh
+On là colle la clé public sur git hub settings SSH 
+
+
+$ git clone git@github.com:hamroune/formation-hdfs.git
+
+	Après installation  de JDK8 et MAVEN
+
+$ export PATH=/c/Users/AGS/Desktop/apache-maven-3.5.4/bin:$PATH
+
+$ mvn --version
+
+$ cd /C/Users/AGS/formation-hdfs
+
+$ export JAVA_HOME=/c/Installation/JDK8  Là ou on a installer le jdk 8
+
+$ echo $JAVA_HOME
+
+$ mvn clean  Clean le fichier Target
+
+$ mvn clean install
+
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD SUCCESS
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time: 01:21 min
+[INFO] Finished at: 2018-09-30T13:19:52+02:00
+[INFO] ------------------------------------------------------------------------
+
+
+Sauvegarder toutes les commandes  
+
+
+Git status
+
+
+
+
+
+
+
