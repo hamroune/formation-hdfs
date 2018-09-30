@@ -20,8 +20,22 @@ public class Main {
        Configuration config = new Configuration();
        FileSystem fs = FileSystem.get(config);
        Path source = new Path("sofiane.txt");
-       Path dest = new Path("/user/sofiane");
-       fs.copyFromLocalFile(false,true,source, dest);
+       Path dest = new Path("/user/sofiane/");
+
+       try {
+           if (fs.exists(source)) {
+               fs.delete(source, true);
+           }
+
+           FSDataOutputStream fin = fs.create(source);
+           fin.close();
+
+           fs.copyFromLocalFile(false,true,source, dest);
+       }catch (Exception err){
+           
+       }
+
+
        logger.info("Ending ");
 
    }
