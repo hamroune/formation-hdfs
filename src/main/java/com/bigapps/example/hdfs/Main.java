@@ -19,8 +19,8 @@ public class Main {
       logger.info("Starting ");
        Configuration config = new Configuration();
        FileSystem fs = FileSystem.get(config);
-       Path source = new Path("sofiane/sofiane.txt");
-       Path dest = new Path("/user");
+       Path source = new Path("sofiane.txt");
+       Path dest = new Path("/user/sofiane/");
 
        try {
            if (fs.exists(source)) {
@@ -30,9 +30,9 @@ public class Main {
            FSDataOutputStream fin = fs.create(source);
            fin.close();
 
-           fs.copyFromLocalFile(false,true,source, dest);
+           fs.copyFromLocalFile(source, dest);
        }catch (Exception err){
-
+            System.out.println(err.getMessage());
        }
 
 
