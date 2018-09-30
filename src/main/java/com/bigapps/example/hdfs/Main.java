@@ -19,18 +19,10 @@ public class Main {
       logger.info("Starting ");
        Configuration config = new Configuration();
        FileSystem fs = FileSystem.get(config);
-       Path filenamePath = new Path("sofiane.txt");
-       try {
-           if (fs.exists(filenamePath)) {
-               fs.delete(filenamePath, true);
-           }
-
-           FSDataOutputStream writer = fs.create(filenamePath);
-           writer.writeUTF("hello sofiane");
-           writer.close();
-       }catch (Exception err){
-        System.err.print(err.getMessage());
-       }
+       Path source = new Path("sofiane.txt");
+       Path dest = new Path("/user/sofiane");
+       fs.copyFromLocalFile(false,true,source, dest);
+       logger.info("Ending ");
 
    }
 }
