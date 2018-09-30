@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/example-java-read-and-write-from-hdfs.iml" filepath="$PROJECT_DIR$/example-java-read-and-write-from-hdfs.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hdfs.iml" filepath="$PROJECT_DIR$/hdfs.iml" />
     </modules>
   </component>
 </project>
