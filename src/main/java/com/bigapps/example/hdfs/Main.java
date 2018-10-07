@@ -19,7 +19,7 @@ public class Main {
 
       try {
 
-         String hdfsPath= "hdfs://10.132.0.2:8020";
+         String hdfsPath= "hdfs://10.132.0.2:8020/";
          String localFileName= "/home/bw_maamar_kouadri/helloworld.txt";
          System.out.println("okay");
          Configuration configuration = new Configuration();
