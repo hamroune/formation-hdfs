@@ -29,7 +29,7 @@ public class Main {
          configuration.set("fs.file.impl",
                  org.apache.hadoop.fs.LocalFileSystem.class.getName()
          );
-         configuration.set("fs.defaultFS",hdfsPath);
+
          configuration.set("fs.default.name", hdfsPath);
          System.out.println("okay2");
          FileSystem fs = null;
