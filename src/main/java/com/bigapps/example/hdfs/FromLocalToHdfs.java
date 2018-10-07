@@ -27,26 +27,36 @@ public class FromLocalToHdfs {
 
 
     }
-    public void push(String localFileName,String hdfsPath) {
+    public void push() {
         try
 
         {
 
+            Configuration conf = new Configuration();
+            //conf.addResource(new Path("/user/wissam"));
+
+            FileSystem fs = FileSystem.get(conf);
+            fs.copyFromLocalFile(new Path("/home/bw_maamar_kouadri/helloWorld.txt"),
+                    new Path("/user/wissam"));
+
+
+           /*
+            System.out.println("okay");
             Configuration configuration = new Configuration();
+            System.out.println("okay2");
             FileSystem fs = null;
             fs = FileSystem.get(new URI(hdfsPath), configuration);
+            System.out.println("okay3");
             fs.copyFromLocalFile(new Path(localFileName), new Path(hdfsPath));
+            System.out.println("okay4");*/
             fs.close();
         }
      catch(IOException e)
-
     {
-        e.printStackTrace();
-    } catch(URISyntaxException e){
         e.printStackTrace();
     }
     catch (Exception ex) {
-        System.out.println("Exception " + ex.toString());
+        ex.printStackTrace();
     }
 
 }

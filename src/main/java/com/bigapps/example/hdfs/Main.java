@@ -1,6 +1,4 @@
 package com.bigapps.example.hdfs;
-
-
 import org.apache.commons.io.IOUtils;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.fs.FSDataInputStream;
@@ -16,14 +14,16 @@ public class Main {
    private static final Logger logger = Logger.getLogger("com.bigapps.example.hdfs.Main");
 
    public static void main(String[] args)  {
-      logger.info("Starting ");
-      /*
-      String localFileName= "./Data/helloWorld.txt";
-      String uri= "dataproc-ccf11a60-26ec-43a6-954e-bbabd444d4c5-europe-west1";
+
+
+        String localFileName= "D:\\Users\\wissam\\Documents\\these\\formation_bigdata\\formation-hdfs\\Data\\helloWorld.txt";
+      //String uri= "dataproc-ccf11a60-26ec-43a6-954e-bbabd444d4c5-europe-west1";
       FromLocalToHdfs fromLocalToHdfs = new  FromLocalToHdfs();
-      fromLocalToHdfs.createLocal(localFileName);
-      fromLocalToHdfs.push(localFileName,uri );
-      System.out.print("hello");*/
+      System.out.print("okay");
+      //fromLocalToHdfs.createLocal(localFileName);
+      System.out.print("file writing okay");
+      fromLocalToHdfs.push( );
+      System.out.print("hello");
 
    }
 }
