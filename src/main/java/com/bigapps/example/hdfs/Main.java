@@ -6,6 +6,8 @@ import org.apache.hadoop.fs.FSDataOutputStream;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 
+
+import java.io.IOException;
 import java.net.URI;
 import java.util.logging.Logger;
 
@@ -15,15 +17,22 @@ public class Main {
 
    public static void main(String[] args)  {
 
+      try {
+         Configuration conf = new Configuration();
+         //conf.addResource(new Path("/user/wissam"));
 
-        String localFileName= "D:\\Users\\wissam\\Documents\\these\\formation_bigdata\\formation-hdfs\\Data\\helloWorld.txt";
-      //String uri= "dataproc-ccf11a60-26ec-43a6-954e-bbabd444d4c5-europe-west1";
-      FromLocalToHdfs fromLocalToHdfs = new  FromLocalToHdfs();
-      System.out.print("okay");
-      //fromLocalToHdfs.createLocal(localFileName);
-      System.out.print("file writing okay");
-      fromLocalToHdfs.push( );
-      System.out.print("hello");
+         FileSystem fs = FileSystem.get(conf);
+         fs.copyFromLocalFile(new Path("/home/bw_maamar_kouadri/helloWorld.txt"), new Path("/user/wissam"));
+
+      }
+
+      catch(IOException e)
+      {
+         e.printStackTrace();
+      }
+      catch (Exception ex) {
+         ex.printStackTrace();
+      }
 
    }
 }
