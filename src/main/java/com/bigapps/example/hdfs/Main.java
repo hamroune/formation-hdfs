@@ -22,6 +22,12 @@ public class Main {
          String localFileName= "/home/bw_maamar_kouadri/helloworld.txt";
          System.out.println("okay");
          Configuration configuration = new Configuration();
+         configuration.set("fs.hdfs.impl",
+                 org.apache.hadoop.hdfs.DistributedFileSystem.class.getName()
+         );
+         configuration.set("fs.file.impl",
+                 org.apache.hadoop.fs.LocalFileSystem.class.getName()
+         );
          System.out.println("okay2");
          FileSystem fs = null;
          fs = FileSystem.get(new URI(hdfsPath), configuration);
