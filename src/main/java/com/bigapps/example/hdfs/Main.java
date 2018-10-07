@@ -22,7 +22,9 @@ public class Main {
          //conf.addResource(new Path("/user/wissam"));
 
          FileSystem fs = FileSystem.get(conf);
-         fs.copyFromLocalFile(new Path("/home/bw_maamar_kouadri/helloWorld.txt"), new Path("/user/wissam"));
+         fs.copyFromLocalFile(new Path("/home/bw_maamar_kouadri/helloworld.txt"), new Path("/user/wissam"));
+
+
 
       }
 
