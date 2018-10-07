@@ -18,11 +18,17 @@ public class Main {
    public static void main(String[] args)  {
 
       try {
-         Configuration conf = new Configuration();
-         //conf.addResource(new Path("/user/wissam"));
+         String hdfsPath= "hdfs://10.132.0.2:8020";
+         String localFileName= "/home/bw_maamar_kouadri/helloworld.txt";
+         System.out.println("okay");
+         Configuration configuration = new Configuration();
+         System.out.println("okay2");
+         FileSystem fs = null;
+         fs = FileSystem.get(new URI(hdfsPath), configuration);
+         System.out.println("okay3");
+         fs.copyFromLocalFile(new Path(localFileName), new Path(hdfsPath));
+         System.out.println("okay4");
 
-         FileSystem fs = FileSystem.get(conf);
-         fs.copyFromLocalFile(new Path("/home/bw_maamar_kouadri/helloworld.txt"), new Path("/user/wissam"));
 
 
 
@@ -38,3 +44,6 @@ public class Main {
 
    }
 }
+
+
+

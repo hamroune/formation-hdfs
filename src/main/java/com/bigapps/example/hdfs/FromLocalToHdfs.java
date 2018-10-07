@@ -1,6 +1,7 @@
 package com.bigapps.example.hdfs;
 
 import org.apache.hadoop.conf.Configuration;
+import org.apache.hadoop.fs.FileStatus;
 import org.apache.hadoop.fs.FileSystem;
 import org.apache.hadoop.fs.Path;
 
@@ -27,17 +28,31 @@ public class FromLocalToHdfs {
 
 
     }
-    public void push() {
-        try
+    public void push() throws IOException, URISyntaxException{
 
-        {
 
-            Configuration conf = new Configuration();
-            //conf.addResource(new Path("/user/wissam"));
+                    // ====== Init HDFS File System Object
+                    Configuration conf = new Configuration();
+                    conf.addResource(new Path("/home/boulesbaa/travail/hadoopreadwrite/src/main/resources/hdfs-site.xml"));
+                    // Set FileSystem URI
+                    String hdfsuri = "hdfs://172.17.0.2:8022/" ;
 
-            FileSystem fs = FileSystem.get(conf);
-            fs.copyFromLocalFile(new Path("/home/bw_maamar_kouadri/helloWorld.txt"),
-                    new Path("/user/wissam"));
+
+                    //Get the filesystem - HDFS
+                    FileSystem fs = FileSystem.get( new URI(hdfsuri) ,  new Configuration());
+                    FileStatus[] status = fs.listStatus(new Path(hdfsuri));  // you need to pass in your hdfs path
+
+
+
+                    //==== Create folder if not exists
+                    String path = "documents" ;
+
+                    for(FileStatus f : status){
+                        System.out.println(f.getPath().toString());
+                    }
+
+
+
 
 
            /*
@@ -50,14 +65,7 @@ public class FromLocalToHdfs {
             fs.copyFromLocalFile(new Path(localFileName), new Path(hdfsPath));
             System.out.println("okay4");*/
             fs.close();
-        }
-     catch(IOException e)
-    {
-        e.printStackTrace();
-    }
-    catch (Exception ex) {
-        ex.printStackTrace();
-    }
+
 
 }
 }
