@@ -29,8 +29,8 @@ public class Main {
          configuration.set("fs.file.impl",
                  org.apache.hadoop.fs.LocalFileSystem.class.getName()
          );
-
-         configuration.set("fs.default.name", hdfsPath);
+         configuration.set("fs.default.name", (hdfsPath));
+         configuration.set("fs.defaultFS", (hdfsPath));
          System.out.println("okay2");
          FileSystem fs = null;
          fs = FileSystem.get(new URI(hdfsPath), configuration);
