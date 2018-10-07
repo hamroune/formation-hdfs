@@ -7,10 +7,12 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="example-java-read-and-write-from-hdfs" />
+        <module name="hdfs" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
       <module name="example-java-read-and-write-from-hdfs" target="1.8" />
+      <module name="hdfs" target="1.8" />
     </bytecodeTargetLevel>
   </component>
 </project>
